@@ -9,11 +9,26 @@ const lightbox = document.getElementById('image-lightbox');
 const lightboxImage = lightbox.querySelector('img');
 const lightboxClose = lightbox.querySelector('.lightbox-close');
 const galleryCards = document.querySelectorAll('.gallery-card');
+const header = document.querySelector('.site-header');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else if (!siteNav.classList.contains('open')) {
+    header.classList.remove('scrolled');
+  }
+});
 
 navToggle?.addEventListener('click', () => {
   const expanded = navToggle.getAttribute('aria-expanded') === 'true';
   navToggle.setAttribute('aria-expanded', String(!expanded));
   siteNav.classList.toggle('open');
+  
+  if (!expanded) {
+    header.classList.add('scrolled');
+  } else if (window.scrollY <= 50) {
+    header.classList.remove('scrolled');
+  }
 });
 
 modalButtons.forEach((button) => {
@@ -109,7 +124,34 @@ lightbox.addEventListener('click', (event) => {
   if (event.target === lightbox) closeLightbox();
 });
 
-const revealElements = document.querySelectorAll('.section, .hero, .service-card, .about-card, .map-card');
+// Counter animation for stats
+const statNumbers = document.querySelectorAll('.stat-number');
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const target = +entry.target.getAttribute('data-target');
+      const duration = 2000;
+      const increment = target / (duration / 16);
+      let current = 0;
+      
+      const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+          entry.target.textContent = Math.ceil(current);
+          requestAnimationFrame(updateCounter);
+        } else {
+          entry.target.textContent = target + (target > 50 ? "+" : "");
+        }
+      };
+      
+      updateCounter();
+      statsObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+statNumbers.forEach(stat => statsObserver.observe(stat));
+
+const revealElements = document.querySelectorAll('.hero-content, .section-heading, .service-card, .about-card, .map-card, .stat-item, .split-grid > div, .gallery-marquee');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {

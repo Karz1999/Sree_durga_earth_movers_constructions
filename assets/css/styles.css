@@ -51,12 +51,20 @@ button {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 10;
-  background: rgba(248, 250, 255, 0.95);
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(204, 215, 226, 0.55);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 .header-inner,
@@ -73,7 +81,12 @@ button {
   align-items: center;
   gap: 0.75rem;
   text-decoration: none;
-  color: inherit;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.site-header.scrolled .brand {
+  color: var(--text-dark);
 }
 
 .brand-logo {
@@ -91,9 +104,14 @@ button {
 }
 
 .site-nav a {
-  color: var(--text-dark);
+  color: #ffffff;
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.site-header.scrolled .site-nav a {
+  color: var(--text-dark);
 }
 
 .nav-toggle {
@@ -108,8 +126,12 @@ button {
   width: 24px;
   height: 2px;
   margin: 4px 0;
-  background: var(--text-dark);
+  background: #ffffff;
   transition: transform 0.25s ease;
+}
+
+.site-header.scrolled .nav-toggle span {
+  background: var(--text-dark);
 }
 
 .hero {
@@ -119,8 +141,23 @@ button {
   justify-content: center;
   text-align: center;
   padding: 6rem 0;
-  background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.85)), url('../images/Site1.jpeg') center/cover no-repeat;
+  position: relative;
   color: #ffffff;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.85)), url('../images/Site1.jpeg') center/cover no-repeat;
+  z-index: -1;
+  animation: heroZoom 20s infinite alternate linear;
+}
+
+@keyframes heroZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.15); }
 }
 
 .hero-content {
@@ -188,7 +225,8 @@ button {
 
 .button:hover,
 .button:focus-visible {
-  transform: translateY(-1px);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .button-primary {
@@ -211,7 +249,8 @@ button {
 .about,
 .services,
 .gallery,
-.contact {
+.contact,
+.stats {
   padding: 4rem 0;
 }
 
@@ -235,6 +274,35 @@ button {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.stats {
+  background: var(--text-dark);
+  color: #ffffff;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2.5rem;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+  line-height: 1;
+}
+
+.stat-item p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
 }
 
 .feature-list {
@@ -358,14 +426,17 @@ button {
   color: var(--muted);
 }
 
-.hero,
-.section,
+.hero-content,
+.section-heading,
 .service-card,
 .about-card,
-.map-card {
+.map-card,
+.stat-item,
+.split-grid > div,
+.gallery-marquee {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .reveal-visible {
@@ -511,9 +582,18 @@ textarea:focus {
 
   .site-nav.open {
     display: flex;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   }
 
   .site-nav a {
     padding: 0.5rem 0;
+    color: var(--text-dark) !important;
   }
 }
