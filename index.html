@@ -9,12 +9,67 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* UI Enhancements for a World-Class Look */
+    .icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      font-size: 24px;
+      padding: 0;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .icon-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .whatsapp-btn { background-color: #25D366 !important; color: white !important; border: none !important; }
+    .instagram-btn { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important; color: white !important; border: none !important; }
+    .linkedin-btn { background-color: #0077b5 !important; color: white !important; border: none !important; }
+    
+    /* Floating Social Corner */
+    .floating-socials {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 1000;
+    }
+    .floating-socials .social-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 24px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .floating-socials .social-icon:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    }
+    .floating-socials .whatsapp { background-color: #25D366; }
+    .floating-socials .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .floating-socials .linkedin { background-color: #0077b5; }
+
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#home">
-        <img src="assets/images/logo1.jpeg" alt="Sree Durga Earth Movers logo" class="brand-logo" />
         <span>Sree Durga Earth Movers</span>
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -32,24 +87,24 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Trusted earthwork specialists</p>
-          <h1>Reliable excavation, site prep and civil hauling.</h1>
-          <p>Fast turnaround for construction sites, industrial yards, farm land clearing and infrastructure preparation across the region.</p>
-          <div class="hero-actions">
-            <button class="button button-primary" data-open-modal="enquiry-modal">Send Enquiry</button>
-            <a class="button button-secondary" href="https://wa.me/919481152277" target="_blank" rel="noreferrer noopener">WhatsApp</a>
-          </div>
-        </div>
-        <div class="hero-media" aria-hidden="true">
-          <img src="assets/images/Site1.jpeg" alt="Earth moving equipment at work" />
+      <div class="container hero-content">
+        <p class="eyebrow eyebrow-light">Trusted Construction & Earthwork Specialists</p>
+        <h1>Building the future, from the ground up.</h1>
+        <p class="hero-subtitle">Comprehensive solutions including earth moving, excavation, structural construction, and architectural planning (2D/3D & Elevations) across the region.</p>
+        <div class="hero-actions">
+          <button class="button button-primary" data-open-modal="enquiry-modal">Send Enquiry</button>
+          <a class="button button-secondary icon-btn whatsapp-btn" href="https://wa.me/919481152277" target="_blank" rel="noreferrer noopener" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
         </div>
       </div>
     </section>
 
     <section class="section about" id="about">
       <div class="container split-grid">
+        <div class="card about-card">
+          <img src="assets/images/visiting-card.jpeg" alt="Sree Durga Earth Movers visiting card" />
+        </div>
         <div>
           <p class="eyebrow">About Us</p>
           <h2>Project-ready earth moving and construction support.</h2>
@@ -61,32 +116,55 @@
             <li>24/7 responsive site support</li>
           </ul>
         </div>
-        <div class="card about-card">
-          <img src="assets/images/visiting-card.jpeg" alt="Sree Durga Earth Movers visiting card" />
-        </div>
       </div>
     </section>
 
     <section class="section services" id="services">
       <div class="container">
-        <p class="eyebrow">Services</p>
-        <h2>Heavy-duty support for every construction need.</h2>
+        <div class="section-heading center-heading">
+          <p class="eyebrow">Our Services</p>
+          <h2>Complete support for every construction need.</h2>
+        </div>
         <div class="service-grid">
           <article class="service-card">
+            <i class="fas fa-truck-pickup fa-2x service-icon"></i>
             <h3>Earth Moving</h3>
             <p>Bulk excavation and haulage for site preparations, roadworks, and foundation trenches.</p>
           </article>
           <article class="service-card">
+            <i class="fas fa-hammer fa-2x service-icon"></i>
             <h3>Excavation</h3>
             <p>Precise trenching, pit digging, and subgrade preparation for buildings and utilities.</p>
           </article>
           <article class="service-card">
+            <i class="fas fa-map-marked-alt fa-2x service-icon"></i>
             <h3>Site Preparation</h3>
             <p>Leveling, grading, compaction and clearing to make sites safe and ready for construction.</p>
           </article>
           <article class="service-card">
+            <i class="fas fa-dolly fa-2x service-icon"></i>
             <h3>Material Handling</h3>
             <p>Aggregate supply, debris removal, and on-site transport with modern heavy machinery.</p>
+          </article>
+          <article class="service-card">
+            <i class="fas fa-building fa-2x service-icon"></i>
+            <h3>Structure Construction</h3>
+            <p>End-to-end building and structural construction for residential and commercial projects.</p>
+          </article>
+          <article class="service-card">
+            <i class="fas fa-cube fa-2x service-icon"></i>
+            <h3>3D Plan</h3>
+            <p>Realistic 3D architectural modeling and visualization for your upcoming projects.</p>
+          </article>
+          <article class="service-card">
+            <i class="fas fa-pencil-ruler fa-2x service-icon"></i>
+            <h3>2D Plan</h3>
+            <p>Precise 2D drafting and floor plans for approvals, layouts, and clear structural guidelines.</p>
+          </article>
+          <article class="service-card">
+            <i class="fas fa-home fa-2x service-icon"></i>
+            <h3>Elevation</h3>
+            <p>Stunning exterior elevation designs tailored to modern, contemporary, or traditional aesthetics.</p>
           </article>
         </div>
       </div>
@@ -109,9 +187,6 @@
             <button class="gallery-card" type="button" data-image="assets/images/logo2.jpeg" data-alt="Company vehicle and team">
               <img src="assets/images/logo2.jpeg" alt="Company vehicle and team" />
             </button>
-            <button class="gallery-card" type="button" data-image="assets/images/logo1.jpeg" data-alt="Earth movers logo">
-              <img src="assets/images/logo1.jpeg" alt="Earth movers logo" />
-            </button>
           </div>
         </div>
       </div>
@@ -124,9 +199,16 @@
           <h2>Ready to start your site project?</h2>
           <p>Reach out via WhatsApp or Instagram, or send an enquiry and we’ll get back to you with availability and a tailored quote.</p>
           <div class="contact-links">
-            <a class="button button-primary" href="https://wa.me/919481152277" target="_blank" rel="noreferrer noopener">WhatsApp</a>
-            <a class="button button-secondary" href="https://instagram.com/dummy" target="_blank" rel="noreferrer noopener">Instagram</a>
             <button class="button button-outline" data-open-modal="enquiry-modal">Enquiry Form</button>
+            <a class="button button-primary icon-btn whatsapp-btn" href="https://wa.me/919481152277" target="_blank" rel="noreferrer noopener" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a class="button button-secondary icon-btn instagram-btn" href="https://instagram.com/dummy" target="_blank" rel="noreferrer noopener" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a class="button button-secondary icon-btn linkedin-btn" href="https://linkedin.com/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
           </div>
         </div>
         <div class="map-card">
@@ -172,6 +254,10 @@
             <option>Excavation</option>
             <option>Site Preparation</option>
             <option>Material Handling</option>
+            <option>Structure Construction</option>
+            <option>3D Plan</option>
+            <option>2D Plan</option>
+            <option>Elevation</option>
           </select>
 
           <label for="message">Message</label>
@@ -188,6 +274,19 @@
   <div class="lightbox" id="image-lightbox" aria-hidden="true">
     <button class="lightbox-close" type="button" aria-label="Close image view">×</button>
     <img src="" alt="" />
+  </div>
+
+  <!-- Floating Social Icons in the Corner -->
+  <div class="floating-socials">
+    <a href="https://wa.me/919481152277" class="social-icon whatsapp" target="_blank" rel="noreferrer noopener" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://instagram.com/dummy" class="social-icon instagram" target="_blank" rel="noreferrer noopener" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://linkedin.com/" class="social-icon linkedin" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
   </div>
 
   <script src="assets/js/main.js"></script>
