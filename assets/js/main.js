@@ -67,8 +67,7 @@ window.addEventListener('keydown', (event) => {
 
 form?.addEventListener('submit', async (event) => {
   event.preventDefault();
-  formStatus.textContent = 'Sending message...';
-  const formData = new FormData(form);
+  formStatus.textContent = 'Sending enquiry...';
 
   const required = [...form.querySelectorAll('[required]')];
   const valid = required.every((field) => field.value.trim() !== '');
@@ -78,22 +77,31 @@ form?.addEventListener('submit', async (event) => {
   }
 
   try {
-    const response = await fetch(form.action, {
-      method: 'POST',
-      body: formData,
-      headers: {
-        Accept: 'application/json',
-      },
-    });
+    // --- EMAILJS CONFIGURATION ---
+    // 1. Replace with your EmailJS Service ID
+    const SERVICE_ID = 'YOUR_SERVICE_ID';
+    
+    // 2. Replace with your EmailJS Template ID
+    const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+    
+    // 3. Replace with your EmailJS Public Key
+    const PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; 
+    // -----------------------------
 
-    if (response.ok) {
-      formStatus.textContent = 'Thanks! Your enquiry has been sent.';
-      form.reset();
-    } else {
-      formStatus.textContent = 'Submission failed. Please try again or contact us directly.';
-    }
+    await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form, PUBLIC_KEY);
+    
+    formStatus.textContent = 'Enquiry sent successfully';
+    form.reset();
+
+    // Automatically close the modal after 3 seconds
+    setTimeout(() => {
+      closeModal(modal);
+      formStatus.textContent = ''; // Clear the message for next time
+    }, 3000);
   } catch (error) {
-    formStatus.textContent = 'Network error. Please check your connection and try again.';
+    console.error('EmailJS Error:', error);
+    const errorMessage = error?.text || 'Please verify your EmailJS keys.';
+    formStatus.textContent = `Failed: ${errorMessage}`;
   }
 });
 

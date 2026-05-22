@@ -27,6 +27,7 @@ body {
   margin: 0;
   min-height: 100vh;
   background: var(--bg);
+  background: linear-gradient(rgba(249, 250, 251, 0.85), rgba(249, 250, 251, 0.95)), url('../images/Site1.jpeg') center/cover fixed no-repeat;
 }
 
 img {
@@ -81,12 +82,8 @@ button {
   align-items: center;
   gap: 0.75rem;
   text-decoration: none;
-  color: #ffffff;
-  transition: color 0.3s ease;
-}
-
-.site-header.scrolled .brand {
   color: var(--text-dark);
+  transition: color 0.3s ease;
 }
 
 .brand-logo {
@@ -104,14 +101,10 @@ button {
 }
 
 .site-nav a {
-  color: #ffffff;
+  color: var(--text-dark);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
-}
-
-.site-header.scrolled .site-nav a {
-  color: var(--text-dark);
 }
 
 .nav-toggle {
@@ -126,12 +119,8 @@ button {
   width: 24px;
   height: 2px;
   margin: 4px 0;
-  background: #ffffff;
-  transition: transform 0.25s ease;
-}
-
-.site-header.scrolled .nav-toggle span {
   background: var(--text-dark);
+  transition: transform 0.25s ease;
 }
 
 .hero {
@@ -142,7 +131,7 @@ button {
   text-align: center;
   padding: 6rem 0;
   position: relative;
-  color: #ffffff;
+  color: var(--text-dark);
   overflow: hidden;
 }
 
@@ -150,7 +139,7 @@ button {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.85)), url('../images/Site1.jpeg') center/cover no-repeat;
+  background: linear-gradient(rgba(249, 250, 251, 0.85), rgba(249, 250, 251, 0.95)), url('../images/Site1.jpeg') center/cover no-repeat;
   z-index: -1;
   animation: heroZoom 20s infinite alternate linear;
 }
@@ -177,20 +166,12 @@ button {
   letter-spacing: 0.18em;
 }
 
-.eyebrow-light {
-  color: var(--accent-soft);
-}
-
 .hero h1,
 .section h2 {
   margin: 0;
   font-size: clamp(2.3rem, 4vw, 3.4rem);
   line-height: 1.02;
   color: var(--text-dark);
-}
-
-.hero h1 {
-  color: #ffffff;
 }
 
 .hero p,
@@ -200,7 +181,8 @@ button {
 
 .hero-subtitle {
   font-size: 1.15rem;
-  color: #cbd5e1;
+  color: var(--muted);
+  font-weight: 500;
 }
 
 .hero-actions {
@@ -274,6 +256,70 @@ button {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.business-card {
+  padding: 3rem 2.5rem;
+  background: linear-gradient(135deg, var(--text-dark) 0%, #1e293b 100%);
+  color: #ffffff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bc-header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bc-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+}
+
+.bc-title {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.bc-subtitle {
+  margin: 0.2rem 0 0;
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.bc-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.bc-contact-item {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  font-size: 1rem;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+.bc-contact-item i {
+  color: var(--accent);
+  font-size: 1.4rem;
+  margin-top: 0.15rem;
 }
 
 .stats {
