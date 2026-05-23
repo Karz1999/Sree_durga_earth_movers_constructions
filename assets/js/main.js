@@ -9,6 +9,7 @@ const lightbox = document.getElementById('image-lightbox');
 const lightboxImage = lightbox.querySelector('img');
 const lightboxClose = lightbox.querySelector('.lightbox-close');
 const galleryCards = document.querySelectorAll('.gallery-card');
+const machineryCards = document.querySelectorAll('.machinery-card');
 const header = document.querySelector('.site-header');
 
 window.addEventListener('scroll', () => {
@@ -77,31 +78,30 @@ form?.addEventListener('submit', async (event) => {
   }
 
   try {
-    // --- EMAILJS CONFIGURATION ---
-    // 1. Replace with your EmailJS Service ID
-    const SERVICE_ID = 'YOUR_SERVICE_ID';
-    
-    // 2. Replace with your EmailJS Template ID
-    const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-    
-    // 3. Replace with your EmailJS Public Key
-    const PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; 
-    // -----------------------------
+    const formData = new FormData(form);
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        Accept: 'application/json',
+      },
+    });
 
-    await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form, PUBLIC_KEY);
-    
-    formStatus.textContent = 'Enquiry sent successfully';
-    form.reset();
+    if (response.ok) {
+      formStatus.textContent = 'Enquiry sent successfully';
+      form.reset();
 
-    // Automatically close the modal after 3 seconds
-    setTimeout(() => {
-      closeModal(modal);
-      formStatus.textContent = ''; // Clear the message for next time
-    }, 3000);
+      // Automatically close the modal after 3 seconds
+      setTimeout(() => {
+        closeModal(modal);
+        formStatus.textContent = ''; // Clear the message for next time
+      }, 3000);
+    } else {
+      formStatus.textContent = 'Failed to send enquiry. Please try again.';
+    }
   } catch (error) {
-    console.error('EmailJS Error:', error);
-    const errorMessage = error?.text || 'Please verify your EmailJS keys.';
-    formStatus.textContent = `Failed: ${errorMessage}`;
+    console.error('Submission Error:', error);
+    formStatus.textContent = 'Network error. Please try again later.';
   }
 });
 
@@ -110,6 +110,13 @@ galleryCards.forEach((card) => {
     const src = card.getAttribute('data-image');
     const alt = card.getAttribute('data-alt');
     openLightbox(src, alt);
+  });
+});
+
+machineryCards.forEach((card) => {
+  card.addEventListener('click', () => {
+    const img = card.querySelector('img');
+    if (img) openLightbox(img.src, img.alt);
   });
 });
 
@@ -159,7 +166,7 @@ const statsObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 statNumbers.forEach(stat => statsObserver.observe(stat));
 
-const revealElements = document.querySelectorAll('.hero-content, .section-heading, .service-card, .about-card, .map-card, .stat-item, .split-grid > div, .gallery-marquee');
+const revealElements = document.querySelectorAll('.hero-content, .section-heading, .service-card, .machinery-card, .about-card, .map-card, .stat-item, .split-grid > div, .about-modern-layout > div, .gallery-marquee');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
