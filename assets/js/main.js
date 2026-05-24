@@ -6,6 +6,13 @@ if (mobileToggle) {
   mobileToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
   });
+  
+  // Close menu when a nav link is clicked
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
 }
 
 // Form Submission Handling via FormSubmit
@@ -32,6 +39,8 @@ if (form) {
         formStatus.textContent = 'Enquiry sent successfully!';
         formStatus.style.color = '#10B981'; // green
         form.reset();
+        // Scroll to form after successful submission
+        form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       } else {
         formStatus.textContent = 'Failed to send enquiry. Please try again.';
         formStatus.style.color = '#EF4444'; // red
@@ -42,3 +51,13 @@ if (form) {
     }
   });
 }
+
+// Prevent zoom on double-tap for better mobile UX
+let lastTouchEnd = 0;
+document.addEventListener('touchend', (event) => {
+  const now = Date.now();
+  if (now - lastTouchEnd <= 300) {
+    event.preventDefault();
+  }
+  lastTouchEnd = now;
+}, false);
