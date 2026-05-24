@@ -187,7 +187,7 @@ h1, h2, h3 {
   min-height: 600px;
   display: flex;
   align-items: center;
-  background: url('../Sree_durga_earth_movers_constructions/assets/images/Site1.jpeg') center/cover no-repeat;
+  background: url('../../../assets/images/Site1.jpeg') center/cover no-repeat;
 }
 
 .hero-overlay {
