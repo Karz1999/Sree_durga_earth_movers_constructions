@@ -227,22 +227,21 @@
       <div class="contact-form-wrapper">
         <h2>REQUEST A QUOTE</h2>
         <p>Tell us what you need and we'll reply quickly with availability and pricing.</p>
-        <form id="enquiry-form" action="https://formsubmit.co/karthikmanoj1999@gmail.com" method="POST">
-          <input type="text" name="name" required placeholder="Full Name">
-          <input type="tel" name="phone" required placeholder="Phone Number">
-          <input type="email" name="email" required placeholder="Email Address">
-          <select name="service" required>
+        <form id="enquiry-form">
+          <input type="text" id="form-name" name="name" required placeholder="Full Name">
+          <input type="tel" id="form-phone" name="phone" required placeholder="Phone Number">
+          <input type="email" id="form-email" name="email" required placeholder="Email Address">
+          <select id="form-service" name="service" required>
             <option value="">Select Service Interest...</option>
             <option>Irrigation Ponds</option>
             <option>Jungle Cleaning</option>
-            <option>Lake Restoration</option>
+            <option>Lake Construction or Restoration</option>
             <option>Layout Works</option>
-            <option>Excavator Rentals</option>
+            <option>Excavator for Rentals</option>
             <option>Structural Drawings</option>
           </select>
-          <textarea name="message" rows="4" placeholder="Project details..."></textarea>
-          <input type="hidden" name="_captcha" value="false">
-          <button type="submit" class="btn btn-primary">SUBMIT ENQUIRY</button>
+          <textarea id="form-message" name="message" rows="4" placeholder="Project details..."></textarea>
+          <button type="submit" class="btn btn-primary"><i class="fab fa-whatsapp"></i> SEND VIA WHATSAPP</button>
           <p id="form-status" class="form-status"></p>
         </form>
       </div>

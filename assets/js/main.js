@@ -15,40 +15,69 @@ if (mobileToggle) {
   });
 }
 
-// Form Submission Handling via FormSubmit
+// Form Submission Handling - Send via WhatsApp
 const form = document.getElementById('enquiry-form');
 const formStatus = document.getElementById('form-status');
 
 if (form) {
-  form.addEventListener('submit', async (event) => {
+  form.addEventListener('submit', (event) => {
     event.preventDefault();
-    formStatus.textContent = 'Sending enquiry...';
-    formStatus.style.color = '#F59E0B'; // yellow
-
-    try {
-      const formData = new FormData(form);
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          Accept: 'application/json',
-        },
-      });
-
-      if (response.ok) {
-        formStatus.textContent = 'Enquiry sent successfully!';
-        formStatus.style.color = '#10B981'; // green
-        form.reset();
-        // Scroll to form after successful submission
-        form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      } else {
-        formStatus.textContent = 'Failed to send enquiry. Please try again.';
-        formStatus.style.color = '#EF4444'; // red
-      }
-    } catch (error) {
-      formStatus.textContent = 'Network error. Please try again later.';
-      formStatus.style.color = '#EF4444';
+    
+    // Get form values
+    const name = document.getElementById('form-name').value;
+    const phone = document.getElementById('form-phone').value;
+    const email = document.getElementById('form-email').value;
+    const service = document.getElementById('form-service').value;
+    const message = document.getElementById('form-message').value;
+    
+    // Validate form
+    if (!name || !phone || !email || !service || !message) {
+      formStatus.textContent = 'Please fill in all fields.';
+      formStatus.style.color = '#EF4444'; // red
+      return;
     }
+    
+    // Format WhatsApp message
+    const whatsappMessage = `Hello Sri Durga Earth Movers,
+
+I would like to request a quote for the following:
+
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+Service: ${service}
+Details: ${message}
+
+Please get back to me with availability and pricing.
+
+Thank you!`;
+    
+    // Encode message for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    
+    // Company WhatsApp number (Chirag S)
+    const whatsappNumber = '919481152277';
+    
+    // WhatsApp Web URL
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    
+    formStatus.textContent = 'Opening WhatsApp...';
+    formStatus.style.color = '#F59E0B'; // yellow
+    
+    // Open WhatsApp in new tab
+    window.open(whatsappURL, '_blank');
+    
+    // Reset form after opening WhatsApp
+    setTimeout(() => {
+      form.reset();
+      formStatus.textContent = 'Message sent via WhatsApp!';
+      formStatus.style.color = '#10B981'; // green
+      
+      // Clear status message after 3 seconds
+      setTimeout(() => {
+        formStatus.textContent = '';
+      }, 3000);
+    }, 500);
   });
 }
 
