@@ -8,401 +8,258 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    /* UI Enhancements for a World-Class Look */
-    .icon-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      font-size: 24px;
-      padding: 0;
-      transition: all 0.3s ease;
-      text-decoration: none;
-    }
-    .icon-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    .whatsapp-btn { background-color: #25D366 !important; color: white !important; border: none !important; }
-    .instagram-btn { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important; color: white !important; border: none !important; }
-
-    
-    /* Floating Social Corner */
-    .floating-socials {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      z-index: 1000;
-    }
-    .floating-socials .social-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 24px;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .floating-socials .social-icon:hover {
-      transform: translateY(-5px) scale(1.1);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
-    }
-    .floating-socials .whatsapp { background-color: #25D366; }
-    .floating-socials .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
- 
-
-    html { scroll-behavior: smooth; }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#home">
-        <span>Sri Durga Earth Movers</span>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="contact-info">
+        <a href="tel:+919481152277"><i class="fas fa-phone"></i> +91 94811 52277</a>
+        <a href="mailto:sridurgaearthmoversmudigere@gmail.com"><i class="fas fa-envelope"></i> sridurgaearthmoversmudigere@gmail.com</a>
+      </div>
+      <div class="social-info">
+        <a href="https://wa.me/919481152277" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/sri_durga_earth_movers" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="#" class="brand">
+        <img src="assets/images/logo2.jpeg" alt="Sri Durga Logo">
+        <span>Sri Durga<br><small>Earth Movers</small></span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#machinery">Machinery</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
+      <nav class="nav-links">
+        <a href="#hero">Home</a>
         <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#fleet">Our Fleet</a>
+        <a href="#contact" class="btn btn-primary">Get A Quote</a>
       </nav>
+      <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
     </div>
   </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-content">
-        <p class="eyebrow">Trusted Construction & Earthwork Specialists</p>
-        <h1>Building the future, from the ground up.</h1>
-        <p class="hero-subtitle">Comprehensive solutions including earth moving, excavation, structural construction, and architectural planning (2D/3D & Elevations) across the region.</p>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <p class="subtitle">TRUSTED CONSTRUCTION & EARTHWORK SPECIALISTS</p>
+        <h1>BUILDING THE FUTURE,<br>FROM THE GROUND UP.</h1>
+        <p class="desc">Comprehensive solutions including earth moving, excavation, structural construction, and architectural planning across the region.</p>
         <div class="hero-actions">
-          <button class="button button-primary" data-open-modal="enquiry-modal">Send Enquiry</button>
-          <a class="button button-secondary icon-btn whatsapp-btn" href="https://wa.me/919481152277" target="_blank" rel="noreferrer noopener" aria-label="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-          </a>
+          <a href="#services" class="btn btn-primary">Our Services</a>
+          <a href="#contact" class="btn btn-secondary">Contact Us</a>
         </div>
       </div>
     </section>
 
-    <!-- Dynamic Stats Section -->
-    <section class="section stats" id="stats">
-      <div class="container stats-grid">
-        <div class="stat-item">
-          <h3 class="stat-number" data-target="15">0</h3>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container about-grid">
+      <div class="about-image">
+        <img src="assets/images/Site1.jpeg" alt="Earthworks Site">
+        <div class="experience-badge">
+          <h3>15+</h3>
           <p>Years Experience</p>
         </div>
-        <div class="stat-item">
-          <h3 class="stat-number" data-target="350">0</h3>
-          <p>Projects Completed</p>
+      </div>
+      <div class="about-text">
+        <p class="section-subtitle">ABOUT US</p>
+        <h2>SRI DURGA EARTH MOVERS & CONSTRUCTION CONSULTANTS</h2>
+        <p class="lead">We deliver premium site preparation, excavation, lake restoration, and structural design services across the region.</p>
+        <p>Our team is dedicated to safety, equipment reliability, and keeping your project strictly on schedule. We pride ourselves on blending deep industry experience with an ever-growing fleet of modern machinery.</p>
+        <ul class="check-list">
+          <li><i class="fas fa-check-circle"></i> Advanced Excavators & Heavy Machinery</li>
+          <li><i class="fas fa-check-circle"></i> Flexible Equipment Rentals</li>
+          <li><i class="fas fa-check-circle"></i> Complete Structural & Architectural Drawings</li>
+        </ul>
+      </div>
+    </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-header text-center">
+        <p class="section-subtitle">WHAT WE DO</p>
+        <h2>COMPLETE SUPPORT FOR EVERY CONSTRUCTION NEED</h2>
+      </div>
+      <div class="services-grid">
+        <!-- Service Item -->
+        <div class="service-card">
+          <i class="fas fa-water icon"></i>
+          <h3>Irrigation Ponds</h3>
+          <p>Design and excavation of irrigation ponds for agricultural and commercial needs.</p>
         </div>
-        <div class="stat-item">
-          <h3 class="stat-number" data-target="25">0</h3>
-          <p>Heavy Machineries</p>
+        <div class="service-card">
+          <i class="fas fa-tree icon"></i>
+          <h3>Jungle Cleaning</h3>
+          <p>Thorough land clearing and vegetation removal to prepare your site for development.</p>
         </div>
-        <div class="stat-item">
-          <h3 class="stat-number" data-target="100">0</h3>
-          <p>Happy Clients</p>
+        <div class="service-card">
+          <i class="fas fa-water icon"></i>
+          <h3>Lake Restoration</h3>
+          <p>Specialized services in restoring old lakes and excavating new lake bodies.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-map-marked-alt icon"></i>
+          <h3>Layout Works</h3>
+          <p>Comprehensive layout works, site preparation, and grading for plotting.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-building icon"></i>
+          <h3>Structural Drawings</h3>
+          <p>Expert drawings for residential, commercial, retaining walls, and multistory buildings.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-home icon"></i>
+          <h3>Elevation & Interiors</h3>
+          <p>Stunning exterior elevation designs and comprehensive interior layout planning.</p>
         </div>
       </div>
     </section>
 
-    <section class="section services" id="services">
-      <div class="container">
-        <div class="section-heading center-heading">
-          <p class="eyebrow">Our Services</p>
-          <h2>Complete support for every construction need.</h2>
-        </div>
-        <div class="service-grid">
-          <article class="service-card">
-            <i class="fas fa-water fa-2x service-icon"></i>
-            <h3>Irrigation Ponds</h3>
-            <p>Design and excavation of irrigation ponds for agricultural and commercial needs.</p>
-          </article>
-          <article class="service-card">
-            <i class="fas fa-tree fa-2x service-icon"></i>
-            <h3>Jungle Cleaning</h3>
-            <p>Thorough land clearing and vegetation removal to prepare your site for development.</p>
-          </article>
-          <article class="service-card">
-            <i class="fas fa-water fa-2x service-icon"></i>
-            <h3>Lake Restoration & New Lakes</h3>
-            <p>Specialized services in restoring old lakes and excavating new lake bodies.</p>
-          </article>
-          <article class="service-card">
-            <i class="fas fa-map-marked-alt fa-2x service-icon"></i>
-            <h3>Layout Works</h3>
-            <p>Comprehensive layout works, site preparation, and grading for plotting.</p>
-          </article>
-          <article class="service-card">
-            <i class="fas fa-truck-pickup fa-2x service-icon"></i>
-            <h3>Excavators for Rentals</h3>
-            <p>Reliable excavators and heavy machinery available for rent.</p>
-          </article>
-          <article class="service-card">
-            <i class="fas fa-building fa-2x service-icon"></i>
-            <h3>Structural Drawings</h3>
-            <p>Expert drawings for residential, commercial, retaining walls, and multistory buildings.</p>
-          </article>
-          <article class="service-card">
-            <i class="fas fa-home fa-2x service-icon"></i>
-            <h3>Elevation & Interiors</h3>
-            <p>Stunning exterior elevation designs and comprehensive interior layout planning.</p>
-          </article>
-        </div>
+  <!-- Fleet Section -->
+  <section id="fleet" class="fleet">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">OUR FLEET</p>
+        <h2>MACHINERY & EQUIPMENT FOR RENT</h2>
       </div>
-    </section>
-
-    <!-- New Machinery & Fleet Section -->
-    <section class="section machinery" id="machinery">
-      <div class="container">
-        <div class="section-heading center-heading">
-          <p class="eyebrow">Our Fleet</p>
-          <h2>Machinery & Equipment for Rent</h2>
-        </div>
-        <div class="machinery-grid">
-          <article class="machinery-card">
-            <img src="assets/images/machinaries/ex70.webp" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1578885136359-16c8bee4dba1?auto=format&fit=crop&w=600&q=80';" alt="EX 70 Excavator" />
+      <div class="fleet-grid">
+        <div class="fleet-card">
+          <div class="img-wrapper">
+            <img src="assets/images/machinaries/ex70.jpeg" alt="EX 70">
+          </div>
+          <div class="fleet-info">
             <h3>EX 70 Excavator</h3>
-          </article>
-          <article class="machinery-card">
-            <img src="assets/images/machinaries/ex110.webp" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1541888081180-2c358e221376?auto=format&fit=crop&w=600&q=80';" alt="EX 110 Excavator" />
+          </div>
+        </div>
+        <div class="fleet-card">
+          <div class="img-wrapper">
+            <img src="assets/images/machinaries/ex110.jpeg" alt="EX 110">
+          </div>
+          <div class="fleet-info">
             <h3>EX 110 Excavator</h3>
-          </article>
-          <article class="machinery-card">
-            <img src="assets/images/machinaries/ex200.webp" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1621501103258-3e0ef9f4d1e2?auto=format&fit=crop&w=600&q=80';" alt="EX 200 Excavator" />
+          </div>
+        </div>
+        <div class="fleet-card">
+          <div class="img-wrapper">
+            <img src="assets/images/machinaries/ex200.jpeg" alt="EX 200">
+          </div>
+          <div class="fleet-info">
             <h3>EX 200 Excavator</h3>
-          </article>
-          <article class="machinery-card">
-            <img src="assets/images/machinaries/ex210.webp" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581094364177-380eb9aee40e?auto=format&fit=crop&w=600&q=80';" alt="EX 210 Excavator" />
+          </div>
+        </div>
+        <div class="fleet-card">
+          <div class="img-wrapper">
+            <img src="assets/images/machinaries/ex210.jpeg" alt="EX 210">
+          </div>
+          <div class="fleet-info">
             <h3>EX 210 Excavator</h3>
-          </article>
-          <article class="machinery-card">
-            <img src="assets/images/machinaries/ajax2000.webp" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1604085449297-b9f48fce898a?auto=format&fit=crop&w=600&q=80';" alt="AJAX AGRO 2000 Concrete Mixer" />
+          </div>
+        </div>
+        <div class="fleet-card">
+          <div class="img-wrapper">
+            <img src="assets/images/machinaries/ajax2000.jpeg" alt="AJAX 2000">
+          </div>
+          <div class="fleet-info">
             <h3>AJAX AGRO 2000</h3>
-          </article>
-          <article class="machinery-card">
-            <img src="assets/images/machinaries/tipper.webp" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1582298538104-5e1f0e47ea66?auto=format&fit=crop&w=600&q=80';" alt="Tippers" />
+          </div>
+        </div>
+        <div class="fleet-card">
+          <div class="img-wrapper">
+            <img src="assets/images/machinaries/tipper.jpeg" alt="Tippers">
+          </div>
+          <div class="fleet-info">
             <h3>Tippers</h3>
-          </article>
-          <article class="machinery-card">
-            <img src="assets/images/machinaries/jcb.webp" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1584284897262-12792bb59dfa?auto=format&fit=crop&w=600&q=80';" alt="JCB Backhoe Loader" />
-            <h3>JCB</h3>
-          </article>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section gallery" id="gallery">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Gallery</p>
-          <h2>Recent works</h2>
-        </div>
-        <div class="gallery-marquee" data-pause="false" tabindex="0">
-          <div class="gallery-track">
-            <button class="gallery-card" type="button" data-image="assets/images/Site1.jpeg" data-alt="Earth moving site">
-              <img src="assets/images/Site1.jpeg" alt="Earth moving site" />
-            </button>
-            <button class="gallery-card" type="button" data-image="assets/images/resources1.jpeg" data-alt="Construction equipment at work">
-              <img src="assets/images/resources1.jpeg" alt="Construction equipment at work" />
-            </button>
-            <button class="gallery-card" type="button" data-image="assets/images/logo2.jpeg" data-alt="Company vehicle and team">
-              <img src="assets/images/logo2.jpeg" alt="Company vehicle and team" />
-            </button>
+        <div class="fleet-card">
+          <div class="img-wrapper">
+            <img src="assets/images/machinaries/jcb.jpeg" alt="JCB">
+          </div>
+          <div class="fleet-info">
+            <h3>JCB Backhoe Loader</h3>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section contact" id="contact">
-      <div class="container split-grid">
-        <div>
-          <p class="eyebrow">Contact</p>
-          <h2>Ready to start your site project?</h2>
-          <p>Reach out via phone, WhatsApp, or email, and we’ll get back to you with availability and a tailored quote.</p>
-          <div style="margin-bottom: 2rem; display: grid; gap: 0.5rem; font-size: 1.05rem;">
-            <div><strong>Srikanth:</strong> <a href="tel:+919480645685" style="color: inherit; text-decoration: none;">+91 9480645685</a></div>
-            <div><strong>Raghunath:</strong> <a href="tel:+919449620698" style="color: inherit; text-decoration: none;">+91 9449620698</a></div>
-            <div><strong>Chirag S</strong> <span style="font-size: 0.9em; color: var(--muted);">(BE Civil, Mtech Structures)</span><strong>:</strong> <a href="tel:+919481152277" style="color: inherit; text-decoration: none;">+91 9481152277</a></div>
-            <div style="margin-top: 0.5rem;"><strong>Email:</strong> <a href="mailto:sridurgaearthmoversmudigere@gmail.com" style="color: inherit;">sridurgaearthmoversmudigere@gmail.com</a></div>
-            <div><strong>Email:</strong> <a href="mailto:chiragsshetty277@gmail.com" style="color: inherit;">chiragsshetty277@gmail.com</a></div>
-          </div>
-          <div class="contact-links">
-            <button class="button button-outline" data-open-modal="enquiry-modal">Enquiry Form</button>
-            <a class="button button-primary icon-btn whatsapp-btn" href="https://wa.me/919481152277" target="_blank" rel="noreferrer noopener" aria-label="WhatsApp">
-              <i class="fab fa-whatsapp"></i>
-            </a>
-            <a class="button button-secondary icon-btn instagram-btn" href="https://instagram.com/sri_durga_earth_movers" target="_blank" rel="noreferrer noopener" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-    
-          </div>
-        </div>
-        <div class="map-card">
-          <div class="map-embed">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3885.3741743365817!2d75.63997017507934!3d13.138781887192224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDA4JzE5LjYiTiA3NcKwMzgnMzMuMiJF!5e0!3m2!1sen!2sin!4v1779368847300!5m2!1sen!2sin" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section Moved to the Bottom -->
-    <section class="section about" id="about">
-      <div class="container about-modern-layout">
-        <div class="about-text-block">
-          <p class="eyebrow">About Us</p>
-          <h2>Sri Durga Earth Movers & Construction Consultants</h2>
-          <p class="lead-text">We deliver premium site preparation, excavation, lake restoration, and structural design services across the region.</p>
-          <p>Our team is dedicated to safety, equipment reliability, and keeping your project strictly on schedule. We pride ourselves on blending deep industry experience with an ever-growing fleet of modern machinery.</p>
-          
-          <div class="about-fleet-highlights">
-            <div class="fleet-item">
-              <i class="fas fa-tractor"></i>
-              <div>
-                <strong>Advanced Excavators</strong>
-                <span>EX 70, EX 110, EX 200, EX 210</span>
-              </div>
-            </div>
-            <div class="fleet-item">
-              <i class="fas fa-truck-moving"></i>
-              <div>
-                <strong>Heavy Machinery</strong>
-                <span>AJAX AGRO 2000, Tippers, JCB</span>
-              </div>
-            </div>
-            <div class="fleet-item">
-              <i class="fas fa-handshake"></i>
-              <div>
-                <strong>Flexible Rentals</strong>
-                <span>Reliable equipment available for hire</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="about-visual-block">
-          <div class="card about-card">
-            <div class="business-card">
-              <div class="bc-header">
-                <img src="assets/images/logo2.jpeg" alt="Sri Durga Earth Movers Logo" class="bc-logo" />
-                <div>
-                  <h3 class="bc-title">Sri Durga</h3>
-                  <p class="bc-subtitle">Earth Movers & Construction</p>
-                </div>
-              </div>
-              <div class="bc-body">
-                <div class="bc-contact-item">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <div>
-                    <strong>Head Office:</strong><br/>
-                    Taluk Panchayat Complex, K.M. Road,<br/>
-                    Mudigere - 577 132
-                  </div>
-                </div>
-                <div class="bc-contact-item">
-                  <i class="fas fa-phone-alt"></i>
-                  <div>
-                    Srikanth: +91 94806 45685<br/>
-                    Raghunath: +91 94496 20698<br/>
-                    Chirag S: +91 94811 52277
-                  </div>
-                </div>
-                <div class="bc-contact-item">
-                  <i class="fas fa-envelope"></i>
-                  <div>
-                    sridurgaearthmoversmudigere@gmail.com
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© 2026 Sri Durga Earth Movers & Construction. Built for responsive mobile and desktop browsing.</p>
-    </div>
-  </footer>
-
-  <div class="modal" id="enquiry-modal" aria-hidden="true">
-    <div class="modal-backdrop" data-close-modal></div>
-    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="enquiry-title">
-      <button class="modal-close" type="button" aria-label="Close enquiry form" data-close-modal>&times;</button>
-      <div class="modal-content">
-        <div>
-          <p class="eyebrow">Enquiry</p>
-          <h2 id="enquiry-title">Send us your project details</h2>
-          <p>Tell us what you need and we'll reply quickly with availability and pricing.</p>
-        </div>
+  <!-- Contact & Footer -->
+  <section id="contact" class="contact">
+    <div class="container contact-grid">
+      <div class="contact-form-wrapper">
+        <h2>REQUEST A QUOTE</h2>
+        <p>Tell us what you need and we'll reply quickly with availability and pricing.</p>
         <form id="enquiry-form" action="https://formsubmit.co/karthikmanoj1999@gmail.com" method="POST">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required placeholder="Your name" />
-
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" required placeholder="+91 12345 67890" />
-
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required placeholder="dummy@example.com" />
-
-          <label for="service">Service interest</label>
-          <select id="service" name="service" required>
-            <option value="">Select a service</option>
+          <input type="text" name="name" required placeholder="Full Name">
+          <input type="tel" name="phone" required placeholder="Phone Number">
+          <input type="email" name="email" required placeholder="Email Address">
+          <select name="service" required>
+            <option value="">Select Service Interest...</option>
             <option>Irrigation Ponds</option>
             <option>Jungle Cleaning</option>
-            <option>Lake Restoration & New Lakes</option>
+            <option>Lake Restoration</option>
             <option>Layout Works</option>
-            <option>Excavators for Rentals</option>
+            <option>Excavator Rentals</option>
             <option>Structural Drawings</option>
-            <option>Elevation & Interiors</option>
           </select>
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" placeholder="Project details, location, deadline."></textarea>
-          
-          <!-- FormSubmit Configuration: Disable Captcha for smooth background submission -->
-          <input type="hidden" name="_captcha" value="false" />
-          <button class="button button-primary" type="submit">Send Enquiry</button>
-          <p class="form-status" id="form-status"></p>
+          <textarea name="message" rows="4" placeholder="Project details..."></textarea>
+          <input type="hidden" name="_captcha" value="false">
+          <button type="submit" class="btn btn-primary">SUBMIT ENQUIRY</button>
+          <p id="form-status" class="form-status"></p>
         </form>
       </div>
+      <div class="contact-details">
+        <h2>CONTACT US</h2>
+        <div class="detail-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <strong>Head Office</strong>
+            <p>Taluk Panchayat Complex, K.M. Road, Mudigere - 577 132</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <i class="fas fa-phone"></i>
+          <div>
+            <strong>Direct Lines</strong>
+            <p>Srikanth: +91 94806 45685</p>
+            <p>Raghunath: +91 94496 20698</p>
+            <p>Chirag S: +91 94811 52277</p>
+          </div>
+        </div>
+        <div class="detail-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <strong>Email Us</strong>
+            <p>sridurgaearthmoversmudigere@gmail.com</p>
+            <p>chiragsshetty277@gmail.com</p>
+          </div>
+        </div>
+        <div class="map-embed">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3885.3741743365817!2d75.63997017507934!3d13.138781887192224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDA4JzE5LjYiTiA3NcKwMzgnMzMuMiJF!5e0!3m2!1sen!2sin!4v1779368847300!5m2!1sen!2sin" loading="lazy"></iframe>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="lightbox" id="image-lightbox" aria-hidden="true">
-    <button class="lightbox-close" type="button" aria-label="Close image view">×</button>
-    <img src="" alt="" />
-  </div>
-
-  <!-- Floating Social Icons in the Corner -->
-  <div class="floating-socials">
-    <a href="https://wa.me/919481152277" class="social-icon whatsapp" target="_blank" rel="noreferrer noopener" aria-label="WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-    <a href="https://instagram.com/sri_durga_earth_movers" class="social-icon instagram" target="_blank" rel="noreferrer noopener" aria-label="Instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-    
-  </div>
+  <footer>
+    <div class="container footer-inner">
+      <p>&copy; 2026 Sri Durga Earth Movers & Construction. All Rights Reserved.</p>
+      <div class="footer-socials">
+        <a href="https://wa.me/919481152277" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/sri_durga_earth_movers" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
 
   <script src="assets/js/main.js"></script>
 </body>
