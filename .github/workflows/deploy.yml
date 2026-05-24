@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+      - feature/static-site-scaffold
+  workflow_dispatch:
 
 jobs:
   deploy:
