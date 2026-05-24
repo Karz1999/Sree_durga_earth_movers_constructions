@@ -507,7 +507,7 @@ h1, h2, h3 {
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
   margin-bottom: 1.5rem;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
@@ -912,6 +912,10 @@ footer {
   .about-grid, .contact-grid {
     gap: 2rem;
   }
+  .contact-form-wrapper,
+  .contact-details {
+    padding: 1.5rem;
+  }
 }
 
 @media (max-width: 900px) {
@@ -1028,7 +1032,7 @@ footer {
     max-width: 100%;
   }
   .hero h1 {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: clamp(1.3rem, 2.8vw, 1.8rem);
     margin-bottom: 1rem;
   }
   .hero .desc {
@@ -1185,7 +1189,7 @@ footer {
     min-height: 350px;
   }
   .hero h1 {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     margin-bottom: 0.8rem;
   }
   .hero .subtitle {
