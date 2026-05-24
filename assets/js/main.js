@@ -15,6 +15,26 @@ if (mobileToggle) {
   });
 }
 
+// Hero Carousel Rotation
+const heroSlides = document.querySelectorAll('.hero-slide');
+let activeHeroIndex = 0;
+
+function setHeroSlide(index) {
+  heroSlides.forEach((slide, slideIndex) => {
+    slide.classList.toggle('active', slideIndex === index);
+  });
+}
+
+function nextHeroSlide() {
+  activeHeroIndex = (activeHeroIndex + 1) % heroSlides.length;
+  setHeroSlide(activeHeroIndex);
+}
+
+if (heroSlides.length) {
+  setHeroSlide(activeHeroIndex);
+  setInterval(nextHeroSlide, 6000);
+}
+
 // Form Submission Handling - Send via WhatsApp
 const form = document.getElementById('enquiry-form');
 const formStatus = document.getElementById('form-status');
