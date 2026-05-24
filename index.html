@@ -17,12 +17,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
   <style>
-    #enquiry-form select {
-      color: #ffffff;
-    }
-    #enquiry-form select option {
-      color: #000000;
-    }
     /* Touch-friendly improvements */
     button, a.btn, .mobile-toggle {
       touch-action: manipulation;
@@ -67,7 +61,9 @@
         <a href="#fleet">Our Fleet</a>
         <a href="#contact" class="btn btn-primary">Get A Quote</a>
       </nav>
-      <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+      <div class="header-controls">
+        <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+      </div>
     </div>
   </header>
 
@@ -385,6 +381,7 @@
     <i class="fab fa-instagram"></i>
   </a>
   <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+  <button id="theme-toggle" class="floating-theme-toggle" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
 
   <script src="assets/js/main.js"></script>
 </body>
