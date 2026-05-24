@@ -229,7 +229,7 @@
         <p>Tell us what you need and we'll reply quickly with availability and pricing.</p>
         <form id="enquiry-form">
           <input type="text" id="form-name" name="name" required placeholder="Full Name">
-          <input type="tel" id="form-phone" name="phone" required placeholder="Phone Number">
+          <input type="tel" id="form-phone" name="phone" required placeholder="Phone Number (10 digits)" pattern="[6-9][0-9]{9}" maxlength="10">
           <input type="email" id="form-email" name="email" required placeholder="Email Address">
           <select id="form-service" name="service" required>
             <option value="">Select Service Interest...</option>

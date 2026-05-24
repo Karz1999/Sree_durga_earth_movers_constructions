@@ -18,6 +18,7 @@ if (mobileToggle) {
 // Form Submission Handling - Send via WhatsApp
 const form = document.getElementById('enquiry-form');
 const formStatus = document.getElementById('form-status');
+const phoneInput = document.getElementById('form-phone');
 
 if (form) {
   form.addEventListener('submit', (event) => {
@@ -34,6 +35,15 @@ if (form) {
     if (!name || !phone || !email || !service || !message) {
       formStatus.textContent = 'Please fill in all fields.';
       formStatus.style.color = '#EF4444'; // red
+      return;
+    }
+    
+    // Validate phone number format (10 digits, starting with 6, 7, 8, or 9)
+    const phoneRegex = /^[6-9][0-9]{9}$/;
+    if (!phoneRegex.test(phone)) {
+      formStatus.textContent = 'Phone number must be 10 digits and start with 6, 7, 8, or 9.';
+      formStatus.style.color = '#EF4444'; // red
+      phoneInput.focus();
       return;
     }
     
