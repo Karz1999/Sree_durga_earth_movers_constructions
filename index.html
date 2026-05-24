@@ -7,8 +7,9 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Sri Durga Earth Movers">
-  <title>Sri Durga Earth Movers & Construction</title>
-  <meta name="description" content="Earth moving, excavation, site preparation and civil construction services with fast enquiry and contact support." />
+  <title>Sri Durga Earth Movers & Constructions</title>
+  <meta name="description" content="Trusted Earth Movers & Civil Construction Contractors providing reliable excavation, earthmoving, road work, and construction services." />
+  <meta name="keywords" content="Earth Movers, Excavation Contractors, Civil Construction, JCB Rental, Road Works, Construction Services Karnataka">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -31,6 +32,11 @@
 </head>
 <body>
 
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-spinner"></div>
+  </div>
+
   <!-- Top Bar -->
   <div class="top-bar">
     <div class="container top-bar-inner">
@@ -48,11 +54,11 @@
   </div>
 
   <!-- Navbar -->
-  <header class="navbar">
+  <header class="navbar" id="navbar">
     <div class="container navbar-inner">
       <a href="#" class="brand">
         <img src="assets/images/logo2.jpeg" alt="Sri Durga Logo">
-        <span>Sri Durga<br>Earth Movers and Constructors</span>
+        <span>Sri Durga<br>Earth Movers and Constructions</span>
       </a>
       <nav class="nav-links">
         <a href="#hero">Home</a>
@@ -74,13 +80,13 @@
       <div class="hero-slide" style="background-image: url('assets/images/machinaries/EX 110.jpg');"></div>
     </div>
     <div class="hero-overlay"></div>
-    <div class="container hero-content">
+    <div class="container hero-content reveal">
       <div class="hero-text">
         <p class="subtitle">TRUSTED CONSTRUCTION & EARTHWORK SPECIALISTS</p>
-        <h1>BUILDING THE FUTURE,<br>FROM THE GROUND UP.</h1>
-        <p class="desc">Comprehensive solutions including earth moving, excavation, structural construction, and architectural planning across the region.</p>
+        <h1>Trusted Earth Movers & Civil Construction Contractors</h1>
+        <p class="desc">Providing reliable excavation, earthmoving, road work, and construction services with quality and commitment.</p>
         <div class="hero-actions">
-          <a href="#services" class="btn btn-primary">Our Services</a>
+          <a href="#contact" class="btn btn-primary">Get Free Quote</a>
           <a href="#contact" class="btn btn-secondary">Contact Us</a>
         </div>
       </div>
@@ -89,7 +95,7 @@
 
   <!-- About Section -->
   <section id="about" class="about">
-    <div class="container about-grid">
+    <div class="container about-grid reveal">
       <div class="about-image">
         <img src="assets/images/Site1.jpeg" alt="Earthworks Site">
         <div class="experience-badge">
@@ -99,7 +105,7 @@
       </div>
       <div class="about-text">
         <p class="section-subtitle">ABOUT US</p>
-        <h2>SRI DURGA EARTH MOVERS & CONSTRUCTION CONSULTANTS</h2>
+        <h2>SRI DURGA EARTH MOVERS & CONSTRUCTIONS CONSULTANTS</h2>
         <p class="lead">We deliver premium site preparation, excavation, lake restoration, and structural design services across the region.</p>
         <p>Our team is dedicated to safety, equipment reliability, and keeping your project strictly on schedule. We pride ourselves on blending deep industry experience with an ever-growing fleet of modern machinery.</p>
         <ul class="check-list">
@@ -111,14 +117,36 @@
     </div>
     </section>
 
+  <!-- Stats Section -->
+  <section id="stats" class="stats">
+    <div class="container stats-grid reveal">
+      <div class="stat-item">
+        <h3 class="counter" data-target="10">0</h3><span>+</span>
+        <p>Years Experience</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="counter" data-target="50">0</h3><span>+</span>
+        <p>Projects Completed</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="counter" data-target="25">0</h3><span>+</span>
+        <p>Machines</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="counter" data-target="70">0</h3><span>+</span>
+        <p>Happy Clients</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Services Section -->
   <section id="services" class="services">
     <div class="container">
-      <div class="section-header text-center">
+      <div class="section-header text-center reveal">
         <p class="section-subtitle">WHAT WE DO</p>
         <h2>COMPLETE SUPPORT FOR EVERY CONSTRUCTION NEED</h2>
       </div>
-      <div class="services-grid">
+      <div class="services-grid reveal">
         <!-- Service Item -->
         <div class="service-card">
           <i class="fas fa-water icon"></i>
@@ -162,14 +190,14 @@
   <!-- Fleet Section -->
   <section id="fleet" class="fleet">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <p class="section-subtitle">OUR FLEET</p>
         <h2>MACHINERY & EQUIPMENT FOR RENT</h2>
       </div>
-      <div class="fleet-grid">
+      <div class="fleet-grid reveal">
         <div class="fleet-card">
           <div class="img-wrapper">
-            <img src="assets/images/machinaries/EX 70.jpg" alt="EX 70">
+            <img src="assets/images/machinaries/EX 70.jpg" loading="lazy" alt="EX 70">
           </div>
           <div class="fleet-info">
             <h3>EX 70 Excavator</h3>
@@ -177,7 +205,7 @@
         </div>
         <div class="fleet-card">
           <div class="img-wrapper">
-            <img src="assets/images/machinaries/EX 110.jpg" alt="EX 110">
+            <img src="assets/images/machinaries/EX 110.jpg" loading="lazy" alt="EX 110">
           </div>
           <div class="fleet-info">
             <h3>EX 110 Excavator</h3>
@@ -185,7 +213,7 @@
         </div>
         <div class="fleet-card">
           <div class="img-wrapper">
-            <img src="assets/images/machinaries/EX 200.jpg" alt="EX 200">
+            <img src="assets/images/machinaries/EX 200.jpg" loading="lazy" alt="EX 200">
           </div>
           <div class="fleet-info">
             <h3>EX 200 Excavator</h3>
@@ -193,7 +221,7 @@
         </div>
         <div class="fleet-card">
           <div class="img-wrapper">
-            <img src="assets/images/machinaries/EX-210.jpg" alt="EX 210">
+            <img src="assets/images/machinaries/EX-210.jpg" loading="lazy" alt="EX 210">
           </div>
           <div class="fleet-info">
             <h3>EX 210 Excavator</h3>
@@ -201,7 +229,7 @@
         </div>
         <div class="fleet-card">
           <div class="img-wrapper">
-            <img src="assets/images/machinaries/AJAX.jpg" alt="AJAX 2000">
+            <img src="assets/images/machinaries/AJAX.jpg" loading="lazy" alt="AJAX 2000">
           </div>
           <div class="fleet-info">
             <h3>AJAX 2000 Concrete Mixer</h3>
@@ -209,7 +237,7 @@
         </div>
         <div class="fleet-card">
           <div class="img-wrapper">
-            <img src="assets/images/machinaries/Tipper.jpg" alt="Tippers">
+            <img src="assets/images/machinaries/Tipper.jpg" loading="lazy" alt="Tippers">
           </div>
           <div class="fleet-info">
             <h3>Tippers</h3>
@@ -217,7 +245,7 @@
         </div>
         <div class="fleet-card">
           <div class="img-wrapper">
-            <img src="assets/images/machinaries/JCB-1.jpg" alt="JCB">
+            <img src="assets/images/machinaries/JCB-1.jpg" loading="lazy" alt="JCB">
           </div>
           <div class="fleet-info">
             <h3>JCB</h3>
@@ -227,9 +255,43 @@
     </div>
     </section>
 
+  <!-- Testimonial Section -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <p class="section-subtitle">TESTIMONIALS</p>
+        <h2>WHAT OUR CLIENTS SAY</h2>
+      </div>
+      <div class="testimonials-grid reveal">
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="feedback">"Sri Durga Earth Movers delivered excellent site preparation for our new layout. Their machinery is top-notch and the team is highly professional."</p>
+          <h4>- Rajesh Kumar</h4>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="feedback">"Highly recommend their excavator rental services. Always on time, operator was skilled, and the pricing was very reasonable."</p>
+          <h4>- Ananya S.</h4>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          </div>
+          <p class="feedback">"They handled our lake restoration project with utmost care and efficiency. Truly the best earthwork contractors in the region."</p>
+          <h4>- Vikram Reddy</h4>
+        </div>
+      </div>
+      <p class="testimonial-disclaimer reveal">Testimonials reflect the genuine experience of past clients. Individual results vary based on site conditions, scope and other factors.</p>
+    </div>
+  </section>
+
   <!-- Contact & Footer -->
   <section id="contact" class="contact">
-    <div class="container contact-grid">
+    <div class="container contact-grid reveal">
       <div class="contact-form-wrapper">
         <h2>REQUEST A QUOTE</h2>
         <p>Tell us what you need and we'll reply quickly with availability and pricing.</p>
@@ -245,6 +307,7 @@
             <option>Layout Works</option>
             <option>Excavator for Rentals</option>
             <option>Structural Drawings</option>
+            <option>Elevation & Interiors</option>
           </select>
           <textarea id="form-message" name="message" rows="4" placeholder="Project details..."></textarea>
           <button type="submit" class="btn btn-primary"><i class="fab fa-whatsapp"></i> SEND VIA WHATSAPP</button>
@@ -284,16 +347,44 @@
     </div>
   </section>
 
-  <footer>
-    <div class="container footer-inner">
-      <p>&copy; 2026 Sri Durga Earth Movers & Construction. All Rights Reserved.</p>
-      <div class="footer-socials">
-        <a href="tel:+919481152277" aria-label="Call Now"><i class="fas fa-phone"></i></a>
-        <a href="https://wa.me/919481152277" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://instagram.com/sri_durga_earth_movers" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <footer id="footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <h3>Sri Durga Earth Movers</h3>
+        <p>Providing reliable excavation, earthmoving, road work, and construction services with quality and commitment.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-socials-col">
+        <h3>Follow Us</h3>
+        <div class="footer-socials">
+          <a href="tel:+919481152277" aria-label="Call Now"><i class="fas fa-phone"></i></a>
+          <a href="https://wa.me/919481152277" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://instagram.com/sri_durga_earth_movers" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
       </div>
     </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Sri Durga Earth Movers & Constructions. All Rights Reserved.</p>
+      <p class="designed-by">Website Design and built by <span class="agency-highlight">Nexvora Digital</span></p>
+    </div>
   </footer>
+
+  <!-- Floating WhatsApp, Instagram & Scroll Top -->
+  <a href="https://wa.me/919481152277" target="_blank" class="floating-whatsapp" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://instagram.com/sri_durga_earth_movers" target="_blank" class="floating-instagram" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
 
   <script src="assets/js/main.js"></script>
 </body>

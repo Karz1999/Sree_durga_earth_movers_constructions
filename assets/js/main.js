@@ -1,3 +1,14 @@
+// Preloader
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    preloader.style.opacity = '0';
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, 500);
+  }
+});
+
 // Mobile Navigation Toggle
 const mobileToggle = document.querySelector('.mobile-toggle');
 const navLinks = document.querySelector('.nav-links');
@@ -14,6 +25,16 @@ if (mobileToggle) {
     });
   });
 }
+
+// Sticky Navbar
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
 
 // Hero Carousel Rotation
 const heroSlides = document.querySelectorAll('.hero-slide');
@@ -120,3 +141,66 @@ document.addEventListener('touchend', (event) => {
   }
   lastTouchEnd = now;
 }, false);
+
+// Scroll Reveal
+const revealElements = document.querySelectorAll('.reveal');
+const revealOptions = {
+  threshold: 0.15,
+  rootMargin: "0px 0px -50px 0px"
+};
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      observer.unobserve(entry.target);
+    }
+  });
+}, revealOptions);
+revealElements.forEach(el => {
+  revealObserver.observe(el);
+});
+
+// Animated Counters
+const counters = document.querySelectorAll('.counter');
+const counterObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const target = +entry.target.getAttribute('data-target');
+      const duration = 2000;
+      const increment = target / (duration / 16);
+      let current = 0;
+      const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+          entry.target.innerText = Math.ceil(current);
+          requestAnimationFrame(updateCounter);
+        } else {
+          entry.target.innerText = target;
+        }
+      };
+      updateCounter();
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+counters.forEach(counter => {
+  counterObserver.observe(counter);
+});
+
+// Scroll To Top
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 500) {
+    scrollTopBtn.classList.add('show');
+  } else {
+    scrollTopBtn.classList.remove('show');
+  }
+});
+if (scrollTopBtn) {
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
