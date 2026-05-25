@@ -64,24 +64,29 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Hero Carousel Rotation
-const heroSlides = document.querySelectorAll('.hero-slide');
-let activeHeroIndex = 0;
+// Hero Video Playlist
+const heroVideo = document.getElementById('hero-video');
+if (heroVideo) {
+  const sources = heroVideo.dataset.sources ? heroVideo.dataset.sources.split(',') : [];
+  let currentIndex = 0;
+  const duration = 7000; // show each clip for 7 seconds
 
-function setHeroSlide(index) {
-  heroSlides.forEach((slide, slideIndex) => {
-    slide.classList.toggle('active', slideIndex === index);
-  });
-}
+  const playVideo = (index) => {
+    if (!sources[index]) return;
+    heroVideo.src = sources[index];
+    heroVideo.load();
+    heroVideo.play().catch(() => {});
+  };
 
-function nextHeroSlide() {
-  activeHeroIndex = (activeHeroIndex + 1) % heroSlides.length;
-  setHeroSlide(activeHeroIndex);
-}
+  const cycleHeroVideo = () => {
+    currentIndex = (currentIndex + 1) % sources.length;
+    playVideo(currentIndex);
+  };
 
-if (heroSlides.length) {
-  setHeroSlide(activeHeroIndex);
-  setInterval(nextHeroSlide, 6000);
+  if (sources.length > 1) {
+    playVideo(currentIndex);
+    setInterval(cycleHeroVideo, duration);
+  }
 }
 
 // Form Submission Handling - Send via WhatsApp

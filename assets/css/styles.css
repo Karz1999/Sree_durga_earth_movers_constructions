@@ -1,27 +1,38 @@
 :root {
   --primary: #F97316; /* Construction Orange */
   --primary-hover: #EA580C;
-  --dark: #0A192F; /* Deep Blue */
-  --darker: #020C1B;
-  --light: #F9FAFB;
+  --dark: #0F172A; /* Dark Navy */
+  --darker: #071028;
+  --light: #F8FAFC; /* Light gray background */
+.footer-about,
+.footer-links,
+.footer-socials-col {
+  min-width: 0;
+}
   --white: #FFFFFF;
   --gray: #6B7280;
-  --border: #E5E7EB;
-  --font: 'Montserrat', sans-serif;
+  --border: #E6EDF3;
+  --font-heading: 'Poppins', 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
+.footer-links ul li {
+  line-height: 1.6;
+}
   padding: 0;
 }
 
 html {
+.footer-socials {
+  flex-wrap: wrap;
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font);
+  font-family: var(--font-body);
   background-color: var(--light);
   color: var(--dark);
   line-height: 1.6;
@@ -97,12 +108,15 @@ body.dark-mode .fleet {
 /* Cards Dark Mode */
 body.dark-mode .service-card,
 body.dark-mode .fleet-card,
-body.dark-mode .testimonial-card {
-  background-color: #112240;
+body.dark-mode .testimonial-card,
+body.dark-mode .feature-card {
+  background-color: rgba(17, 34, 64, 0.8);
+  backdrop-filter: blur(10px);
   border-color: #1F2937;
 }
 body.dark-mode .service-card h3,
 body.dark-mode .fleet-card h3,
+body.dark-mode .feature-card h3,
 body.dark-mode .testimonial-card h4 {
   color: var(--white);
 }
@@ -113,6 +127,10 @@ body.dark-mode .fleet-info {
 body.dark-mode .testimonial-card .feedback,
 body.dark-mode .testimonial-disclaimer {
   color: #D1D5DB;
+}
+
+body.dark-mode .why-us {
+  background-color: var(--darker);
 }
 
 /* Contact Section Dark Mode */
@@ -287,9 +305,10 @@ body.dark-mode .floating-theme-toggle:hover {
 
 /* Typography */
 h1, h2, h3 {
+  font-family: var(--font-heading);
   font-weight: 800;
   text-transform: uppercase;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .section-subtitle {
@@ -397,19 +416,19 @@ h1, h2, h3 {
   box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
 }
 
-.navbar-inner {
+  .navbar-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1.25rem;
   width: 100%;
-  min-height: 60px;
+  min-height: 52px;
 }
 
-.brand {
+  .brand {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .brand span {
@@ -477,32 +496,22 @@ h1, h2, h3 {
   min-height: 600px;
   display: flex;
   align-items: center;
-  background-color: var(--dark);
+  background: var(--dark) url('assets/images/Site1.jpeg') center/cover no-repeat;
   overflow: hidden;
 }
 
-.hero-carousel {
+.hero-video {
   position: absolute;
   inset: 0;
-}
-
-.hero-slide {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.hero-slide.active {
-  opacity: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(3,7,18,0.92) 0%, rgba(3,7,18,0.62) 100%);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.92) 100%);
 }
 
 .hero-content {
@@ -513,11 +522,45 @@ h1, h2, h3 {
 }
 
 .hero-text {
-  max-width: 700px;
+  max-width: 680px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+}
+
+.stat-card span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 0.35rem;
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
 }
 
 .hero h1 {
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
   margin-bottom: 1.5rem;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
@@ -627,6 +670,48 @@ section {
   margin-top: 0.5rem;
 }
 
+/* Why Choose Us */
+.why-us {
+  background-color: var(--white);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-card {
+  background: rgba(249, 250, 251, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-bottom: 4px solid var(--border);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-bottom-color: var(--primary);
+  box-shadow: 0 15px 30px -5px rgba(0,0,0,0.1);
+}
+
+.feature-card .icon {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .icon {
+  transform: scale(1.1);
+}
+
 /* Services */
 .services {
   background-color: var(--white);
@@ -640,9 +725,11 @@ section {
 }
 
 .service-card {
-  background: var(--light);
+  background: rgba(249, 250, 251, 0.8);
+  backdrop-filter: blur(10px);
   padding: 2.5rem 2rem;
   border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.5);
   border-bottom: 4px solid var(--border);
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
@@ -650,7 +737,7 @@ section {
 
 .service-card:hover {
   border-bottom-color: var(--primary);
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
 }
 
@@ -671,34 +758,49 @@ section {
 
 .fleet-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: start;
+}
+
+.fleet .section-header {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .fleet-card {
   background: var(--white);
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-  border-bottom: 4px solid transparent;
+  border-bottom: 3px solid transparent;
   transition: all 0.3s ease;
 }
 
 .fleet-card .img-wrapper {
-  height: 220px;
+  height: 180px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--light);
 }
 
 .fleet-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  object-position: center;
+  transition: transform 0.25s ease;
+  padding: 0;
 }
 
 .fleet-card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.02);
 }
 .fleet-card:hover {
   border-bottom-color: var(--primary);
@@ -706,11 +808,17 @@ section {
 }
 
 .fleet-info {
-  padding: 1.5rem;
+  padding: 0.5rem 0.75rem;
   text-align: center;
   background: var(--light);
   color: var(--dark);
-  border-top: 3px solid var(--primary);
+  border-top: 2px solid var(--primary);
+}
+
+.fleet-info h3 {
+  margin: 0.2rem 0 0.15rem;
+  font-size: clamp(0.88rem, 1.4vw, 0.95rem);
+  font-weight: 800;
 }
 
 /* Testimonials */
@@ -838,6 +946,7 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 3rem;
   margin-bottom: 3rem;
+  align-items: start;
 }
 
 .footer-about h3, .footer-links h3, .footer-socials-col h3 {
@@ -848,10 +957,13 @@ footer {
 
 .footer-links ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .footer-links ul li {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.65;
 }
 
 .footer-links ul li a {
@@ -865,6 +977,7 @@ footer {
 .footer-socials {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .footer-socials a {
@@ -938,6 +1051,10 @@ footer {
   }
   .hero-actions {
     flex-wrap: wrap;
+  }
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
   .btn {
     padding: 0.9rem 1.5rem;
@@ -1050,7 +1167,7 @@ footer {
     max-width: 100%;
   }
   .hero h1 {
-    font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
     margin-bottom: 1rem;
   }
   .hero .desc {
@@ -1060,6 +1177,14 @@ footer {
   .hero-actions {
     flex-direction: column;
     gap: 0.8rem;
+  }
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  .stat-card {
+    min-height: auto;
   }
   .btn {
     padding: 0.8rem 1.2rem;
@@ -1100,18 +1225,19 @@ footer {
   
   /* Fleet */
   .fleet-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
   }
   .fleet-card .img-wrapper {
-    height: 150px;
+    height: 130px;
   }
   .fleet-info {
-    padding: 1rem;
+    padding: 0.45rem 0.6rem;
   }
   .fleet-info h3 {
-    font-size: clamp(0.85rem, 2vw, 1rem);
+    font-size: clamp(0.8rem, 1.6vw, 0.92rem);
+    margin: 0.2rem 0;
   }
   
   /* Contact */
@@ -1207,7 +1333,7 @@ footer {
     min-height: 350px;
   }
   .hero h1 {
-    font-size: 1.15rem;
+    font-size: 1rem;
     margin-bottom: 0.8rem;
   }
   .hero .subtitle {
@@ -1250,10 +1376,10 @@ footer {
   /* Fleet */
   .fleet-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.75rem;
   }
   .fleet-card .img-wrapper {
-    height: 120px;
+    height: 100px;
   }
   
   /* Contact */
