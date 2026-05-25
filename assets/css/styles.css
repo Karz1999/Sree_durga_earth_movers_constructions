@@ -1049,12 +1049,24 @@ footer {
     right: 0;
     bottom: 0;
   }
+  .hero-content {
+    padding: 2rem 1rem;
+  }
+  .hero-text {
+    max-width: 100%;
+  }
   .hero-actions {
     flex-wrap: wrap;
+    justify-content: flex-start;
   }
   .hero-stats {
     grid-template-columns: 1fr;
     gap: 0.75rem;
+    margin-top: 1.75rem;
+  }
+  .stat-card {
+    min-height: auto;
+    width: 100%;
   }
   .btn {
     padding: 0.9rem 1.5rem;
@@ -1081,6 +1093,44 @@ footer {
   
   .container {
     padding: 0 1rem;
+  }
+  .hero {
+    height: auto;
+    min-height: 450px;
+    padding: 2rem 0;
+  }
+  .hero-content {
+    padding: 0 0.5rem;
+  }
+  .hero-text {
+    width: 100%;
+  }
+  .hero h1 {
+    font-size: clamp(1.4rem, 5vw, 2.2rem);
+    margin-bottom: 1rem;
+  }
+  .hero .desc {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .hero-actions {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  .stat-card {
+    min-height: auto;
+    padding: 1rem;
+  }
+  .btn {
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+    width: 100%;
+    text-align: center;
   }
   
   /* Top Bar */
