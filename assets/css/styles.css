@@ -400,7 +400,7 @@ h1, h2, h3 {
 .navbar-inner {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 1rem 1.5rem;
   width: 100%;
   min-height: 60px;
@@ -408,8 +408,12 @@ h1, h2, h3 {
 
 .brand {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
+}
+
+.brand span {
+  line-height: 1.2;
 }
 
 .brand img {
