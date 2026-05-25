@@ -1,4 +1,4 @@
-# Sree Durga Earth Movers & Constructions
+# Sree Durga Earth Movers
 
 Static website scaffold for the company portfolio site.
 
