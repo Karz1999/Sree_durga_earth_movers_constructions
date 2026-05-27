@@ -183,11 +183,23 @@ body.dark-mode .contact-form-wrapper textarea:focus {
   box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
 }
 body.dark-mode .contact-form-wrapper select {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 2.5rem;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23F97316' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  background-color: rgba(255,255,255,0.06);
+}
+
+body.dark-mode .contact-form-wrapper select:hover {
+  background-color: rgba(255,255,255,0.08);
 }
 body.dark-mode .contact-form-wrapper select option {
-  color: var(--dark);
-  background: var(--light);
+  color: #000;
+  background: #fff;
+  padding: 0.75rem;
 }
 
 body.dark-mode .detail-item {
@@ -426,6 +438,10 @@ h1, h2, h3 {
   padding: 0.5rem 0;
   width: 100%;
   overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
 }
 
 .top-bar-inner {
@@ -559,7 +575,7 @@ h1, h2, h3 {
   min-height: 600px;
   display: flex;
   align-items: center;
-  padding-top: 120px;
+  margin-top: 60px;
   background: var(--dark) url('assets/images/Site1.jpeg') center/cover no-repeat;
   overflow: hidden;
 }
@@ -644,6 +660,7 @@ h1, h2, h3 {
 /* Sections General */
 section {
   padding: 5rem 0;
+  scroll-margin-top: 75px;
 }
 
 /* Local SEO Section */
@@ -1357,13 +1374,21 @@ footer {
     justify-content: flex-start;
   }
   .hero-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 0.75rem;
     margin-top: 1.75rem;
   }
   .stat-card {
     min-height: auto;
     width: 100%;
+    padding: 1rem;
+  }
+  .stat-card span {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+  }
+  .stat-card p {
+    font-size: 0.9rem;
   }
   .btn {
     padding: 0.9rem 1.5rem;
@@ -1386,6 +1411,7 @@ footer {
   /* Spacing */
   section {
     padding: 2.5rem 0;
+    scroll-margin-top: 72px;
   }
   
   .container {
@@ -1394,7 +1420,8 @@ footer {
   .hero {
     height: auto;
     min-height: 450px;
-    padding: 100px 2rem 2rem 2rem;
+    padding: 64px 2rem 2rem 2rem;
+    margin-top: 0;
   }
   .hero-content {
     padding: 0 0.5rem;
@@ -1415,13 +1442,20 @@ footer {
     gap: 0.8rem;
   }
   .hero-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 0.75rem;
     margin-top: 1.5rem;
   }
   .stat-card {
     min-height: auto;
     padding: 1rem;
+  }
+  .stat-card span {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+  }
+  .stat-card p {
+    font-size: 0.9rem;
   }
   .btn {
     padding: 0.8rem 1rem;
@@ -1447,6 +1481,54 @@ footer {
   }
   .contact-info a {
     font-size: 0.7rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .social-info {
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  /* Top Bar - Hide on Mobile */
+  .top-bar {
+    display: none;
+  }
+
+  /* Navbar Mobile */
+  .navbar {
+    top: 0;
+  }
+  .navbar-inner {
+    padding: 0.6rem 1rem;
+    min-height: 48px;
+  }
+  .brand img {
+    width: 40px;
+    height: 40px;
+  }
+  .brand span {
+    font-size: 0.9rem;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .header-cta {
+    display: none;
+  }
+  .mobile-toggle {
+    display: block;
+  }
     white-space: normal;
     word-break: break-word;
   }
@@ -1526,13 +1608,24 @@ footer {
     gap: 0.8rem;
   }
   .hero-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 0.75rem;
     margin-top: 1.5rem;
   }
   .stat-card {
     min-height: auto;
+    padding: 0.75rem;
   }
+  .stat-card span {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+  .stat-card p {
+    font-size: 0.8rem;
+  }
+  .stat-card { padding: 0.5rem; }
+  .stat-card span { font-size: 1.2rem; }
+  .stat-card p { font-size: 0.65rem; }
   .btn {
     padding: 0.8rem 1.2rem;
     font-size: 0.85rem;
