@@ -1152,13 +1152,21 @@ footer {
     justify-content: flex-start;
   }
   .hero-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.75rem;
     margin-top: 1.75rem;
   }
   .stat-card {
     min-height: auto;
     width: 100%;
+    padding: 1rem 0.5rem;
+  }
+  .stat-card span {
+    font-size: 1.5rem;
+  }
+  .stat-card p {
+    font-size: 0.85rem;
+    text-align: center;
   }
   .btn {
     padding: 0.9rem 1.5rem;
@@ -1206,23 +1214,37 @@ footer {
     margin-bottom: 1.25rem;
   }
   .hero-actions {
-    flex-direction: column;
-    gap: 0.8rem;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  .hero-actions .btn {
+    flex: 1;
+    padding: 0.8rem 0.5rem;
   }
   .hero-stats {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-    margin-top: 1.5rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+    margin-top: 1.25rem;
   }
   .stat-card {
     min-height: auto;
-    padding: 1rem;
+    padding: 0.75rem 0.25rem;
+  }
+  .stat-card span {
+    font-size: 1.25rem;
+  }
+  .stat-card p {
+    font-size: 0.7rem;
+    text-align: center;
+    line-height: 1.2;
   }
   .btn {
     padding: 0.8rem 1rem;
     font-size: 0.85rem;
-    width: 100%;
     text-align: center;
+  }
+  .contact-form-wrapper .btn {
+    width: 100%;
   }
   
   /* Top Bar */
@@ -1269,10 +1291,6 @@ footer {
     width: 40px;
     height: 40px;
   }
-  .header-cta {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.65rem;
-  }
   .mobile-toggle {
     display: block;
   }
@@ -1317,8 +1335,12 @@ footer {
     margin-bottom: 1.5rem;
   }
   .hero-actions {
-    flex-direction: column;
-    gap: 0.8rem;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  .hero-actions .btn {
+    flex: 1;
+    padding: 0.8rem 0.5rem;
   }
   .hero-stats {
     grid-template-columns: 1fr;
@@ -1331,7 +1353,6 @@ footer {
   .btn {
     padding: 0.8rem 1.2rem;
     font-size: 0.85rem;
-    width: 100%;
     text-align: center;
   }
   
@@ -1510,9 +1531,28 @@ footer {
   .hero-actions {
     gap: 0.5rem;
   }
+  .hero-actions .btn {
+    padding: 0.7rem 0.2rem;
+    font-size: 0.75rem;
+  }
   .btn {
     padding: 0.7rem 1rem;
     font-size: 0.75rem;
+  }
+  
+  .hero-stats {
+    gap: 0.3rem;
+    margin-top: 1rem;
+  }
+  .stat-card {
+    padding: 0.5rem 0.2rem;
+  }
+  .stat-card span {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+  }
+  .stat-card p {
+    font-size: 0.6rem;
   }
   
   /* About */
