@@ -576,7 +576,7 @@ h1, h2, h3 {
 }
 
 .hero h1 {
-  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
   margin-bottom: 1.5rem;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
@@ -1146,10 +1146,15 @@ footer {
   }
   .hero-text {
     max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
   .hero-actions {
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
+    width: 100%;
   }
   .hero-stats {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1204,6 +1209,10 @@ footer {
   }
   .hero-text {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
   .hero h1 {
     font-size: clamp(1.4rem, 5vw, 2.2rem);
@@ -1316,44 +1325,6 @@ footer {
   }
   .nav-links.active {
     display: flex;
-  }
-  
-  /* Hero */
-  .hero {
-    height: 60vh;
-    min-height: 400px;
-  }
-  .hero-text {
-    max-width: 100%;
-  }
-  .hero h1 {
-    font-size: clamp(1.4rem, 3vw, 2.2rem);
-    margin-bottom: 1rem;
-  }
-  .hero .desc {
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-  }
-  .hero-actions {
-    flex-direction: row;
-    gap: 0.5rem;
-  }
-  .hero-actions .btn {
-    flex: 1;
-    padding: 0.8rem 0.5rem;
-  }
-  .hero-stats {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-    margin-top: 1.5rem;
-  }
-  .stat-card {
-    min-height: auto;
-  }
-  .btn {
-    padding: 0.8rem 1.2rem;
-    font-size: 0.85rem;
-    text-align: center;
   }
   
   /* Local SEO */
@@ -1517,7 +1488,7 @@ footer {
     min-height: 350px;
   }
   .hero h1 {
-    font-size: 1rem;
+    font-size: 1.4rem;
     margin-bottom: 0.8rem;
   }
   .hero .subtitle {
