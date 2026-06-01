@@ -80,6 +80,20 @@
     button, a.btn, .mobile-toggle {
       touch-action: manipulation;
       -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+      }
+
+      /* Reduce hero stats padding and spacing */
+      .hero-stats {
+        gap: 0.75rem !important;
+      }
+      .stat-card {
+        padding: 0.75rem 1rem !important;
+      }
+      .stat-card span {
+        font-size: 1.5rem !important;
+      }
+      .stat-card p {
+        font-size: 0.85rem !important;
     }
   </style>
 </head>
@@ -135,8 +149,7 @@
     <div class="hero-overlay"></div>
     <div class="container hero-content reveal">
       <div class="hero-text">
-        <p class="subtitle">TRUSTED EARTH MOVERS &amp; CONSTRUCTION EXPERTS</p>
-        <h1>Trusted Earth Movers &amp; Construction Experts</h1>
+               <h1 style="font-size: 2rem; line-height: 1.2;">Trusted Earth Movers &amp; Construction Experts</h1>
         <p class="desc">Premium earthmoving, excavation, and construction services backed by a strong fleet, experienced operators, and timely execution.</p>
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">Get Free Quote</a>
